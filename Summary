@@ -48,7 +48,7 @@ Dataset:
 Methodology:
 1. Loaded data into pandas and handled missing values (`-99.99`).  
 2. Calculated yearly averages using `groupby` to smooth short-term fluctuations.  
-3. Created a line plot with a 5-year rolling average to highlight the long-term trend.
+3. Created a line plot with annual mean data to highlight the long-term trend.
 
 Findings: 
 - CO₂ levels have risen from around 315 ppm in 1958 to over 420 ppm in recent years.  
