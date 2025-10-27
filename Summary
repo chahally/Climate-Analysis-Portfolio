@@ -1,80 +1,73 @@
-# Climate-Analysis-Portfolio
+Climate-Analysis-Portfolio
 
-## Overview
+Overview
 This repository contains two data analysis projects exploring long-term climate trends: 
 
-1. **Global Temperature Change (1880–2025)**  
-2. **Atmospheric CO₂ Change (1958–2025)**  
+1. Global Temperature Change (1880–2025)
+2. Atmospheric CO₂ Change (1958–2025)  
 
-Both projects demonstrate **data cleaning, exploratory analysis, and visualisation** using Python (`pandas`, `matplotlib`).  
+Both projects demonstrate data cleaning, exploratory analysis, and visualisation using Python (pandas, matplotlib).  
 
 ---
 
-## Project 1: Global Temperature Change
+Project 1: Global Temperature Change
 
-**Objective:**  
+Objective:
 To analyse how global temperatures have changed over the last century and visualise trends over time using NASA’s Land-Ocean Temperature Index (LOTI) dataset.
 
-**Dataset:**  
+Dataset:  
 - Source: [NASA GISS](https://data.giss.nasa.gov/gistemp/)  
 - Monthly global, northern, and southern hemisphere temperature anomalies (deviation from 1951–1980 mean) from 1880 to present.
 
-**Methodology:**  
+Methodology:
 1. Loaded data into a pandas DataFrame.  
 2. Cleaned the data by converting missing values (`***`) to `NaN` and removed unnecessary columns.  
 3. Focused on monthly averages (`Jan–Dec`) and calculated annual trends.  
 4. Visualised data using line plots in matplotlib.
 
-**Findings:**  
+Findings:
 - Global temperatures have increased steadily since 1880.  
 - Recent decades show a **faster rate of warming**, consistent with climate change patterns.  
 - Seasonal variation exists, but the long-term trend is **clearly upward**.  
 
-**Skills demonstrated:**  
+Skills demonstrated: 
 Data cleaning, handling missing data, grouping, plotting trends, basic EDA.
 
 
 ---
 
-## Project 2: Atmospheric CO₂ Change
+Project 2: Atmospheric CO₂ Change
 
-**Objective:**  
+Objective:
 To analyse the rise in atmospheric CO₂ levels over time using NOAA Mauna Loa Observatory data.
 
-**Dataset:**  
+Dataset:
 - Source: [NOAA Mauna Loa CO₂](https://gml.noaa.gov/ccgg/trends/data.html)  
 - Monthly mean CO₂ concentrations from 1958 to present.
 
-**Methodology:**  
+Methodology:
 1. Loaded data into pandas and handled missing values (`-99.99`).  
-2. Calculated **yearly averages** using `groupby` to smooth short-term fluctuations.  
+2. Calculated yearly averages using `groupby` to smooth short-term fluctuations.  
 3. Created a line plot with a 5-year rolling average to highlight the long-term trend.
 
-**Findings:**  
-- CO₂ levels have risen from around **315 ppm in 1958** to over **420 ppm in recent years**.  
+Findings: 
+- CO₂ levels have risen from around 315 ppm in 1958 to over 420 ppm in recent years.  
 - The rise is consistent and accelerating over time.  
 - Seasonal oscillations exist due to natural processes, but the overall trend is strongly upward.  
 
-**Skills demonstrated:**  
+Skills demonstrated: 
 Data cleaning, grouping by year, rolling averages, plotting trends, interpreting real-world datasets.
 
 
 ---
 
-## Conclusion
-These projects demonstrate the ability to work with **real-world climate data**, clean and structure it for analysis, visualise long-term trends, and interpret findings. Both datasets clearly show **accelerating changes in Earth’s climate**, providing insight into global warming and human impact on the environment.
+Conclusion
+These projects demonstrate the ability to work with real-world climate data, clean and structure it for analysis, visualise long-term trends, and interpret findings. Both datasets clearly show accelerating changes in Earth’s climate, providing insight into global warming and human impact on the environment.
 
 ---
 
-## Technologies Used
+Technologies Used
 - Python 3  
 - pandas  
 - matplotlib  
-- Jupyter Notebook  
-
----
-
-## How to Use
-1. Clone the repository:  
-```bash
-git clone https://github.com/yourusername/Climate-Analysis-Portfolio.git
+- Jupyter Notebook
