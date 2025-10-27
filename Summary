@@ -1,4 +1,4 @@
-Climate-Analysis-Portfolio
+Climate Analysis Portfolio
 
 Overview
 This repository contains two data analysis projects exploring long-term climate trends: 
@@ -27,8 +27,8 @@ Methodology:
 
 Findings:
 - Global temperatures have increased steadily since 1880.  
-- Recent decades show a **faster rate of warming**, consistent with climate change patterns.  
-- Seasonal variation exists, but the long-term trend is **clearly upward**.  
+- Recent decades show a faster rate of warming, consistent with climate change patterns.  
+- Seasonal variation exists, but the long-term trend is clearly upward.  
 
 Skills demonstrated: 
 Data cleaning, handling missing data, grouping, plotting trends, basic EDA.
