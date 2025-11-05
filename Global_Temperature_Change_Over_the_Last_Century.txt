@@ -1,0 +1,57 @@
+# How Has Global Temperature Changed Over the Last Century?
+
+This project explores NASA’s global temperature anomaly data from 1880–2024 to analyse long-term temperature trends and identify the hottest years on record.  
+The goal is to clean and prepare the dataset, handle missing values, and perform basic exploratory analysis.
+
+---
+
+## 1. Import Libraries
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+## 2. Load the Dataset
+
+df = pd.read_csv('data.txt', skiprows=1, na_values=['***'])
+df.head()
+
+## 3. Inspect Data
+
+df.info()
+print(df.columns)
+
+## 4. Clean the Data
+- Convert all relevant columns to numeric  
+- Handle missing values by removing incomplete rows  
+
+cols_to_convert = df.columns[1:]
+df[cols_to_convert] = df[cols_to_convert].apply(pd.to_numeric, errors='coerce')
+df_clean = df.dropna(subset=['J-D'])
+
+## 5. Basic Exploration
+- Mean global temperature anomaly
+- Year with the highest anomaly
+
+mean_temp_anomaly = df_clean['J-D'].mean()
+max_anomaly_year = df_clean.loc[df_clean['J-D'].idxmax()]
+mean_temp_anomaly, max_anomaly_year
+
+## 6. Visualise Global Temperature Change
+
+plt.figure(figsize=(12,6))
+sns.lineplot(x='Year', y='J-D', data=df_clean)
+plt.title('Global Mean Temperature Anomalies (1880–2024)')
+plt.xlabel('Year')
+plt.ylabel('Temperature Anomaly (°C)')
+plt.show()
+
+## 7. Key Insights
+- Average anomaly since 1880: {mean_temp_anomaly:.2f} °C
+- Highest recorded anomaly: {max_anomaly_year["J-D"]:.2f} °C in {int(max_anomaly_year["Year"])}
+- Steady warming trend, particularly noticeable from the late 20th century onward.
+
+### Conclusion
+The analysis confirms a consistent rise in global average temperatures over the past century, with recent decades showing the sharpest increase. This supports scientific consensus on ongoing global warming.
