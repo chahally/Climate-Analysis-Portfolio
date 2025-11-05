@@ -1,0 +1,77 @@
+# How Has Global CO₂ Concentration Changed Over Time?
+
+This notebook analyses atmospheric CO₂ concentration data from the Mauna Loa Observatory (Hawaii) between 1958 and 2025.  
+The goal is to explore how CO₂ levels have changed over time and visualise the long-term trend.
+
+---
+
+## Step 1: Import libraries
+Using Python libraries for data handling, analysis, and visualisation.
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+import plotly
+
+---
+
+## Step 2: Load the dataset
+
+The dataset is the Mauna Loa monthly CO₂ record, available from the [NOAA ESRL website](https://gml.noaa.gov/ccgg/trends/data.html).
+
+df = pd.read_csv('data/co2_data.txt', comment='#')
+df.head()
+
+---
+
+## Step 3: Explore the data
+Checking the structure and quality of the dataset.
+
+df.info()
+
+df.isnull().sum()
+
+No missing values are present, so we can proceed with the analysis.
+
+---
+
+## Step 4: Aggregate the data by year
+
+Calculating the average annual CO₂ concentration to observe the long-term trend.
+
+co2_yearly = df.groupby('year')['average'].mean().reset_index()
+co2_yearly.head()
+
+---
+
+## Step 5: Visualise the trend
+Plotting the yearly average CO₂ concentrations to see how they’ve changed since 1958.
+
+plt.figure(figsize=(12,6))
+plt.plot(co2_yearly['year'], co2_yearly['average'], color='green', marker='o', linestyle='-')
+
+plt.title('Average Atmospheric CO₂ Concentration (Mauna Loa, Hawaii)', fontsize=14)
+plt.xlabel('Year')
+plt.ylabel('CO₂ Concentration (ppm)')
+plt.grid(True)
+
+# Save the figure
+plt.savefig('images/co2_trend.png', dpi=300, bbox_inches='tight')
+
+plt.show()
+
+---
+
+## Step 6: Summary
+
+- Atmospheric CO₂ concentration has steadily increased from around 315 ppm in 1958 to over 425 ppm in 2025.
+- This reflects the impact of human-driven emissions and industrialisation.
+- The Mauna Loa record is one of the most important long-term climate datasets, showing a clear upward trend consistent with global warming research.
+
+---
+
+## Tools used
+- Python (pandas, matplotlib, seaborn, numpy)
+- Dataset: Mauna Loa Observatory monthly CO₂ data from NOAA ESRL
